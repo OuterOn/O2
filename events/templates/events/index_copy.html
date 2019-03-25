@@ -1,0 +1,412 @@
+{% extends 'events/base.html' %}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="shortcut icon" href="img/fav.png">
+		<meta name="author" content="colorlib">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta charset="UTF-8">
+		
+		<title>OuterOn</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+		<link rel="stylesheet" href="{% static 'events/css/linearicons.css' %}">
+		<link rel="stylesheet" href="{% static 'events/css/font-awesome.min.css' %}">
+		<link rel="stylesheet" href="{% static 'events/css/bootstrap.css' %}">
+		<link rel="stylesheet" href="{% static 'events/css/magnific-popup.css' %}">
+		<link rel="stylesheet" href="{% static 'events/css/jquery-ui.css' %}">				
+		<link rel="stylesheet" href="{% static 'events/css/nice-select.css' %}">							
+		<link rel="stylesheet" href="{% static 'events/css/animate.min.css' %}">
+		<link rel="stylesheet" href="{% static 'events/css/owl.carousel.css' %}">				
+		<link rel="stylesheet" href="{% static 'events/css/main.css' %}">
+		<link rel="shortcut icon" href="{% static 'events/img/O2_logo.png' %}"> 
+		<link rel="stylesheet" type="text/css" href="{% static 'events/ResponsiveImageGallery/css/elastislide.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'events/ResponsiveImageGallery/css/style_photo_carousal.css' %}" />
+	</head>
+	<body>	
+		<header id="header">
+			<div class="header-top">
+				<div class="container">
+			  		<div class="row justify-content-center">
+					      <div id="logo">
+					        <a href="index.html"><img src="{% static 'events/img/O2_logo.png' %}" alt="" title="" /></a>
+					      </div>
+			  		</div>			  					
+				</div>
+			</div>
+			<div class="container main-menu">
+				<div class="row align-items-center justify-content-center d-flex">			
+			      <nav id="nav-menu-container">
+			        <ul class="nav-menu">
+			          <li><a href="/">Home</a></li>
+			          <li><a href="/about">About</a></li>
+			          <li><a href="/#upcoming">Events</a></li>
+			          <li><a href="/gallery">Gallery</a></li>
+			          <!-- <li class="menu-has-children"><a href="">Blog</a>
+			            <ul>
+			              <li><a href="blog-home.html">Blog Home</a></li>
+			              <li><a href="blog-single.html">Blog Single</a></li>
+			            </ul>
+			          </li>	
+			          <li class="menu-has-children"><a href="">Pages</a>
+			            <ul>
+			            	  <li><a href="elements.html">Elements</a></li>
+					          <li class="menu-has-children"><a href="">Level 2 </a>
+					            <ul>
+					              <li><a href="#">Item One</a></li>
+					              <li><a href="#">Item Two</a></li>
+					            </ul>
+					          </li>					                		
+			            </ul>
+			          </li>	 -->				          					          		          
+			          <li><a href="contact">Contact</a></li>
+			        </ul>
+			      </nav><!-- #nav-menu-container -->					      		  
+				</div>
+			</div>
+		</header><!-- #header -->
+		
+		<!-- start banner Area -->
+		<section class="banner-area">		
+			<div class="container">
+				<div class="row fullscreen align-items-center justify-content-between">
+					<div class="col-lg-12 banner-content">
+						<h1 class="text-white">OuterOn</h1>
+						<h4 class="text-white ">We curate <i><strong>aspirational</strong></i> events for self-exploration.</h4>
+						<!-- <h4 class="text-white">If <i><strong>music</strong></i> drives you... Let no reasons hold you back...</h4> -->
+						</br></br>
+						<!-- <div class="icon">
+							<h3 class="text-white"><span class="lnr lnr-calendar-full"></span> 05th 2018</h3>
+							<h3 class="text-white"><span class="lnr lnr-location"></span>  56/8, Dhanmondi, Dhaka - 1205</h3>
+						</div> -->
+						</br>
+						<a href="#upcoming" class="primary-btn text-uppercase"> See Latest Events </a>
+					</div>
+				</div>
+			</div>					
+		</section>
+		<!-- End banner Area -->
+
+		<!-- Start home-about Area -->
+		<section class="home-about-area section-gap">
+			<div class="container">
+				<h1 class="text-center">About</h1>
+				</br></br>
+				<div class="row align-items-center">
+					<div class="col-lg-4 home-about-left">
+						<div class="">
+							<img class="img-fluid" src="{% static 'events/img/about-img.jpg' %}" alt="">
+						</div>
+						</br>
+						<h4>About Our Story</h4>
+						<p>
+							Who are in extremely love with eco friendly system. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+						<!-- <a href="#" class="primary-btn">view full menu</a> -->
+					</div>
+					<div class="col-lg-4 home-about-left">
+						<div class="">
+							<img class="img-fluid" src="{% static 'events/img/about-img.jpg' %}" alt="">
+						</div>
+						</br>
+						<h4>About Our Story</h4>
+						<p>
+							Who are in extremely love with eco friendly system. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+						<!-- <a href="#" class="primary-btn">view full menu</a> -->
+					</div>
+					<div class="col-lg-4 home-about-left">
+						<div class="">
+							<img class="img-fluid" src="{% static 'events/img/about-img.jpg' %}" alt="">
+						</div>
+						</br>
+						<h4>About Our Story</h4>
+						<p>
+							Who are in extremely love with eco friendly system. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+						<!-- <a href="#" class="primary-btn">view full menu</a> -->
+					</div>
+
+					<!-- <div class="col-lg-6 home-about-right">
+						<img class="img-fluid" src="img/about-img.jpg" alt="">
+					</div> -->
+				</div>
+			</div>	
+		</section>
+		<!-- End home-about Area -->
+
+
+		<!-- Start upcoming Area -->
+		<section class="blog-area" id="upcoming">
+			<div class="container">
+				<div class="row d-flex justify-content-center">
+					<div class="menu-content pb-70 col-lg-8">
+						<div class="title text-center">
+							<h1 class="mb-10">Upcoming Events</h1>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.</p>
+						</div>
+					</div>
+				</div>					
+				<div class="row">
+					{% for e in upcoming %}
+						<div class="col-lg-3 col-md-6 col-sm-6 single-blog">
+							<div class="thumb">
+								<img class="img-fluid" src="media/{{ e.icon }}" alt="">								
+							</div>
+							<p class="date">{{ e.datetime | date:"d M Y"}}</p>
+							<a href="/event/{{ e.id }}"><h4>{{ e.title }}</h4></a>
+							<p>{{ e.one_liner|safe|escape }}</p>								
+						</div>
+					{% endfor %}
+					<!-- <div class="col-lg-3 col-md-6 col-sm-6 single-blog">
+						<div class="thumb">
+							<img class="img-fluid" src="{% static 'events/img/b2.jpg' %}" alt="">								
+						</div>
+						<p class="date">10 Jan 2018</p>
+						<a href="blog-single.html"><h4>Secret of making Heart 
+						Shaped eggs</h4></a>
+						<p>
+							inappropriate behavior ipsum dolor sit amet, consectetur.
+						</p>
+						<div class="meta-bottom d-flex justify-content-between">
+							<p><span class="lnr lnr-heart"></span> 15 Likes</p>
+							<p><span class="lnr lnr-bubble"></span> 02 Comments</p>
+						</div>									
+					</div> -->							
+				</div>
+			</div>	
+		</section>
+		<!-- End upcoming Area -->
+
+		<!-- Start Past Area -->
+		<section class="blog-area section-gap" id="past">
+			<div class="container">
+				<div class="row d-flex justify-content-center">
+					<div class="menu-content pb-70 col-lg-8">
+						<div class="title text-center">
+							<h1 class="mb-10">Past Events</h1>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.</p>
+						</div>
+					</div>
+				</div>					
+				<div class="row">
+					{% for e in past %}
+						<div class="col-lg-3 col-md-6 col-sm-6 single-blog">
+							<div class="thumb">
+								<img class="img-fluid" src="media/{{ e.icon }}" alt="">								
+							</div>
+							<p class="date">{{ e.datetime | date:"d b Y" | title }}</p>
+							<a href="/event/{{ e.id }}"><h4>{{ e.title }}</h4></a>
+							<p>{{ e.one_liner|safe|escape }}</p>
+							<div class="meta-bottom d-flex justify-content-between">
+								<p><span class="lnr lnr-menu-circle"></span> 15 Performances</p>
+								<p><span class="lnr lnr-heart"></span> 2 Likes</p>
+							</div>									
+						</div>
+					{% endfor %}							
+				</div>
+			</div>	
+		</section>
+		<!-- End Past Area -->
+
+		<!-- Start Review Area -->
+		<section class="review-area section-gap">
+			<div class="container">
+				<h1 class="text-center">People's Words</h1>
+				</br></br>
+				<div class="row">
+					<div class="active-review-carusel">
+						<div class="single-review">
+							<img src="{% static 'events/img/user.png' %}" alt="">
+							<h4>Hulda Sutton</h4>
+							<div class="star">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>								
+							</div>	
+							<p>
+								“Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker. Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.”
+							</p>
+						</div>
+						<div class="single-review">
+							<img src="{% static 'events/img/user.png' %}" alt="">
+							<h4>Hulda Sutton</h4>
+							<div class="star">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>								
+							</div>	
+							<p>
+								“Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker. Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.”
+							</p>
+						</div>	
+						<div class="single-review">
+							<img src="{% static 'events/img/user.png' %}" alt="">
+							<h4>Hulda Sutton</h4>
+							<div class="star">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>								
+							</div>	
+							<p>
+								“Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker. Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.”
+							</p>
+						</div>
+						<div class="single-review">
+							<img src="{% static 'events/img/user.png' %}" alt="">
+							<h4>Hulda Sutton</h4>
+							<div class="star">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>								
+							</div>	
+							<p>
+								“Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker. Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.”
+							</p>
+						</div>												
+					</div>
+				</div>
+			</div>	
+		</section>
+		<!-- End review Area -->
+
+		<!-- Start brand area -->
+		<section class="brand-area section-gap">
+			<div class="container">
+				<h1 class="text-center">Partners</h1>
+				</br></br></br>
+				<div class="row logo-wrap">
+					<a class="col single-img" href="#">
+						<img class="d-block mx-auto" src="{% static 'events/img/l1.png' %}" alt="">
+					</a>
+					<a class="col single-img" href="#">
+						<img class="d-block mx-auto" src="{% static 'events/img/l2.png' %}" alt="">
+					</a>
+					<a class="col single-img" href="#">
+						<img class="d-block mx-auto" src="{% static 'events/img/l3.png' %}" alt="">
+					</a>
+					<a class="col single-img" href="#">
+						<img class="d-block mx-auto" src="{% static 'events/img/l4.png' %}" alt="">
+					</a>
+					<a class="col single-img" href="#">
+						<img class="d-block mx-auto" src="{% static 'events/img/l5.png' %}" alt="">
+					</a>
+				</div>	
+			</div>	
+		</section>
+		<!-- end brand area -->
+
+
+		<!-- start footer Area -->		
+		<footer class="footer-area">
+			<div class="footer-widget-wrap">
+				<div class="container">
+					<div class="row ">
+						<div class="col-lg-4  col-md-6 col-sm-6">
+							<div class="single-footer-widget">
+								</br></br>
+								<h4>For any information or query,</br> drop an email to us.</h4>
+								<!-- <ul class="hr-list">
+									<li class="d-flex justify-content-between">
+										<span>Monday - Friday</span> <span>08.00 am - 10.00 pm</span>
+									</li>
+									<li class="d-flex justify-content-between">
+										<span>Saturday</span> <span>08.00 am - 10.00 pm</span>
+									</li>
+									<li class="d-flex justify-content-between">
+										<span>Sunday</span> <span>08.00 am - 10.00 pm</span>
+									</li>																				
+								</ul> -->
+								<a href="#" class="primary-btn text-uppercase" style="background-color: #000;">Write an Email </a>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="single-footer-widget">
+								</br></br>
+								<h4>OR, Contact Us</h4>
+								<!-- <p>
+									56/8, los angeles, rochy beach, Santa monica, United states of america - 1205
+								</p> -->
+								<p class="number">
+									+91-8918580148 <br>
+									+91-7042360720
+								</p>
+							</div>
+						</div>						
+						<div class="col-lg-4 col-md-6 col-sm-6">
+							<div class="single-footer-widget">
+								</br></br>
+								<h4>Subscribe</h4>
+								<p>You can trust us. we only send event updates, not a single spam.</p>
+								<div class="d-flex flex-row" id="mc_embed_signup">
+									<form class="navbar-form" action="/subscribe" method="post">
+										{% csrf_token %}
+									    <div class="input-group add-on align-items-center d-flex">
+									      	<input class="form-control" id="inputEmail" name="EMAIL" placeholder="Your Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email address'" required="" type="email">
+											<div style="position: absolute; left: -5000px;">
+												<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+											</div>
+									    	<div class="input-group-btn">
+									        	<button class="genric-btn" id="submit"><span class="lnr lnr-arrow-right"></span></button>
+									    	</div>
+									    </div>
+									    <div class="info mt-20"></div>
+									</form>
+								</div>
+							</div>
+						</div>						
+					</div>					
+				</div>					
+			</div>
+			<div class="footer-bottom-wrap">
+				<div class="container">
+					<div class="row footer-bottom d-flex justify-content-between align-items-center">
+						<p class="col-lg-8 col-mdcol-sm-6 -6 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> OuterOn - All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+						<ul class="col-lg-4 col-mdcol-sm-6 -6 social-icons text-right">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>           
+                        </ul>
+					</div>						
+				</div>
+			</div>
+		</footer>
+		<!-- End footer Area -->	
+
+		<script src="{% static 'events/js/vendor/jquery-2.2.4.min.js' %}"></script>
+		<script src="{% static 'events/js/popper.min.js' %}"></script>
+		<script src="{% static 'events/js/vendor/bootstrap.min.js' %}"></script>			
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>		
+		<script src="{% static 'events/js/jquery-ui.js' %}"></script>					
+		<script src="{% static 'events/js/easing.min.js' %}"></script>			
+		<script src="{% static 'events/js/hoverIntent.js' %}"></script>
+		<script src="{% static 'events/js/superfish.min.js' %}"></script>	
+		<script src="{% static 'events/js/jquery.ajaxchimp.min.js' %}"></script>
+		<script src="{% static 'events/js/jquery.magnific-popup.min.js' %}"></script>						
+		<script src="{% static 'events/js/jquery.nice-select.min.js' %}"></script>					
+		<script src="{% static 'events/js/owl.carousel.min.js' %}"></script>			
+        <script src="{% static 'events/js/isotope.pkgd.min.js' %}"></script>								
+		<script src="{% static 'events/js/mail-script.js' %}"></script>	
+		<script src="{% static 'events/js/main.js' %}"></script>	
+		<script src="https://apis.google.com/js/platform.js"></script>
+		<script type="text/javascript" src="{% static 'events/ResponsiveImageGallery/js/jquery.tmpl.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'events/ResponsiveImageGallery/js/jquery.easing.1.3.js' %}"></script>
+		<script type="text/javascript" src="{% static 'events/ResponsiveImageGallery/js/jquery.elastislide.js' %}"></script>
+		<script type="text/javascript" src="{% static 'events/ResponsiveImageGallery/js/gallery.js' %}"></script>
+	</body>
+</html>

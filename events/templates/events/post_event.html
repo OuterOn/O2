@@ -1,0 +1,279 @@
+{% extends 'events/base.html' %}
+{% load staticfiles %}
+{% load app_filters %}
+
+	{% block script %}
+	<noscript>
+		<style>
+			.es-carousel ul{
+				display:block;
+			}
+		</style>
+	</noscript>
+	<script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">	
+		<div class="rg-image-wrapper">
+			<div class="rg-image-nav">
+				<a href="#" class="rg-image-nav-prev">Previous Image</a>
+				<a href="#" class="rg-image-nav-next">Next Image</a>
+			</div>
+			<div class="rg-image"></div>
+			<div class="rg-loading"></div>
+			<div class="rg-caption-wrapper">
+				<div class="rg-caption" style="display:none;">
+					<p></p>
+				</div>
+			</div>
+		</div>
+	</script>
+	{% endblock %}
+
+		
+		{% block content%}
+		<!-- start banner Area -->
+		<section class="banner-area">		
+			<div class="container">
+				<div class="row fullscreen align-items-center justify-content-between">
+					<div class="col-lg-12 banner-content">
+						<h1 class="text-white">{{ event_obj.title }}</h1>
+						<h4 class="text-white ">{{ event_obj.one_liner|safe|escape }}</h4>
+						</br></br>
+						<div class="icon">
+							<h3 class="text-white"><span class="lnr lnr-calendar-full"></span> {{ event_obj.datetime | date:"j F, Y | g A"}}</h3>
+							<h3 class="text-white"><span class="lnr lnr-location"></span> {{ event_obj.venue_name }}</h3>
+						</div>
+						</br></br>
+						<a href="#" class="primary-btn text-uppercase"> Show's Over </a>
+					</div>
+				</div>
+			</div>					
+		</section>
+		<!-- End banner Area -->
+
+		<!-- Start home-about Area -->
+		<section class="home-about-area section-gap">
+			<div class="container">
+				<h1 class="text-center">About</h1>
+				</br></br>
+				<div class="row justify-content-center">
+					<div class="col-lg-4 home-about-left">
+						<div class="">
+							<img class="img-fluid" src="{% static 'events/img/about-img.jpg' %}" alt="">
+						</div>
+						</br>
+						<h4>About Our Story</h4>
+						<p>
+							Who are in extremely love with eco friendly system. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+						<!-- <a href="#" class="primary-btn">view full menu</a> -->
+					</div>
+					<div class="col-lg-4 home-about-left">
+						<div class="">
+							<img class="img-fluid" src="{% static 'events/img/about-img.jpg' %}" alt="">
+						</div>
+						</br>
+						<h4>About Our Story</h4>
+						<p>
+							Who are in extremely love with eco friendly system. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+						<!-- <a href="#" class="primary-btn">view full menu</a> -->
+					</div>
+					<div class="col-lg-4 home-about-left">
+						<div class="">
+							<img class="img-fluid" src="{% static 'events/img/about-img.jpg' %}" alt="">
+						</div>
+						</br>
+						<h4>About Our Story</h4>
+						<p>
+							Who are in extremely love with eco friendly system. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+						<!-- <a href="#" class="primary-btn">view full menu</a> -->
+					</div>
+				</div>
+			</div>	
+		</section>
+		<!-- End home-about Area -->
+
+		<!-- Start guests Area -->
+		{% if guests.0 and guests.1 %}
+			<section class="home-about-area">
+				<div class="container">
+					<h1 class="text-center">Guest Performances</h1>
+					</br></br>
+					<div class="row justify-content-center">
+						{% for person, detail in guests %}
+							<div class="col-lg-4 home-about-center">
+								<div class="">
+									<img class="img-fluid" src="/media/{{ detail.photograph }}" alt="" style=" border-radius: 50%;  display: block; margin-left: auto; margin-right: auto; width: 50%;">
+								</div>
+								</br>
+								<h4 class="text-center">{{ person.first_name}} {{ person.last_name }}</h4>
+								</br>
+								<p class="text-center">{{ person.one_liner|linebreaksbr }}</p>
+								<!-- <a href="#" class="primary-btn">view full menu</a> -->
+							</div>
+						{% endfor %}
+						<!-- <div class="col-lg-4 home-about-center">
+							<div class="">
+								<img class="img-fluid" src="{% static 'events/img/guest_image.jpg' %}" alt="" style=" border-radius: 50%;  display: block; margin-left: auto; margin-right: auto; width: 50%;">
+							</div>
+							</br>
+							<h4 class="text-center">About Our Story</h4>
+							<p class="text-center">
+								Who are in extremely love with eco friendly system. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							</p>
+						</div> -->
+					</div>
+				</div>	
+			</section>
+		{% endif %}
+		<!-- End guests Area -->
+
+		<!-- Start Photos Area -->
+		{% if photos %}			
+			<section class="home-about-area section-gap">
+				<div class="container">
+					<h1 class="text-center">Moments</h1>
+					</br>
+					<div style="margin:0px 25px 30px 25px;">
+						<div id="rg-gallery" class="rg-gallery">
+							<div class="rg-thumbs">
+								<div class="es-carousel-wrapper">
+									<div class="es-nav">
+										<span class="es-nav-prev">Previous</span>
+										<span class="es-nav-next">Next</span>
+									</div>
+									<div class="es-carousel">
+										<ul>
+											{% for photo in photos %}
+												<li><a href="#"><img style="width: 65px; height: 65px;" src="{{ photo }}" data-large="{{ photo }}" alt="image"/></a></li>
+											{% endfor %}
+											<li><a href="#"><img src="{% static 'events/ResponsiveImageGallery/images/thumbs/1.jpg' %}" data-large="{% static 'events/ResponsiveImageGallery/images/1.jpg' %}" alt="image01"/></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		{% endif %}
+		<!-- End Photos Area -->			
+
+		<!-- Start Videos Area -->
+		{% if yt_links %}
+			<section class="review-area" style="background: unset;">
+				<div class="container">
+					<h1 class="text-center">All Performances</h1>
+					</br></br>
+					<div class="row">
+						<div class="active-review-carusel">
+							{% for ytlink in yt_links %}
+								<div class="row align-items-center">
+									<div class="col-lg-6 home-about-left">
+										<h4>{{ ytlink.title }}</h4>
+										<p>
+											{{ ytlink.description|safe|escape }}
+											Who are in extremely love with eco friendly system. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+										</p>
+										<!-- <a href="#" class="primary-btn">view full menu</a> -->
+										<div class="g-ytsubscribe" data-channelid="UCyMqxpQszz-Bl1-z1IyEeRA" data-layout="default" data-count="hidden"></div>
+									</div>
+									<div class="col-lg-6 home-about-right">
+										<iframe width="490" height="353" src="{{ ytlink.link }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									</div>
+								</div>
+							{% endfor %}
+							<div class="row align-items-center">
+								<div class="col-lg-6 home-about-left">
+									<p>
+										Who are in extremely love with eco friendly system. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+									</p>
+									<a href="#" class="primary-btn">view full menu</a>
+								</div>
+								<div class="col-lg-6 home-about-right">
+									<img class="img-fluid" src="img/about-img.jpg" alt="">
+								</div>
+							</div>													
+						</div>
+					</div>
+				</div>	
+			</section>
+		{% endif %}
+		<!-- End videos area -->
+
+		<!-- Start brand area -->
+		{% if sponsors %}
+			<section class="brand-area section-gap">
+				<div class="container">
+					<h1 class="text-center">Partners</h1>
+					</br></br></br>
+					<div class="row logo-wrap">
+						{% for sponsor in sponsors %}
+							<a class="col single-img" href="{{ sponsor.website }}">
+								<img style="max-width: 159px; max-height: 120px;" class="d-block mx-auto" src="/media/{{ sponsor.logo }}" alt="">
+							</a>
+						{% endfor %}
+						<a class="col single-img" href="#">
+							<img class="d-block mx-auto" src="{% static 'events/img/l2.png' %}" alt="">
+						</a>
+					</div>	
+				</div>	
+			</section>
+		{% endif %}
+		<!-- end brand area -->
+
+		<!-- Start Review Area -->
+		{% if feedbacks %}
+			<section class="review-area section-gap">
+				<div class="container">
+					<h1 class="text-center">People's Words</h1>
+					</br></br>
+					<div class="row">
+						<div class="active-review-carusel">
+							{% for feedback in feedbacks %}
+								<div class="single-review">
+									<!-- <img src="{% static 'events/img/user.png' %}" alt=""> -->
+									<h4>{{feedback.event_person_map.person_id.first_name}} {{feedback.event_person_map.person_id.last_name}}</h4>
+									<p>{{feedback.event_person_map.person_id.one_liner}}</p>
+									<div class="star">
+										{% for i in feedback.rating|getrange %}
+											<span class="fa fa-star checked"></span>
+										{% endfor %}
+										
+										{% for i in feedback.rating|minus|getrange %}
+											<span class="fa fa-star"></span>
+										{% endfor %}					
+									</div>	
+									<p>
+										{{feedback.comment}}
+									</p>
+								</div>
+							{% endfor %}
+							<div class="single-review">
+								<img src="{% static 'events/img/user.png' %}" alt="">
+								<h4>Hulda Sutton</h4>
+								<div class="star">
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star"></span>								
+								</div>	
+								<p>
+									“Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker. Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.”
+								</p>
+							</div>												
+						</div>
+					</div>
+				</div>	
+			</section>
+		{% endif %}
+		<!-- End review Area -->					
+		{% endblock %}
+
+		{% block galleryscripts %}
+		<script type="text/javascript" src="{% static 'events/ResponsiveImageGallery/js/jquery.tmpl.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'events/ResponsiveImageGallery/js/jquery.easing.1.3.js' %}"></script>
+		<script type="text/javascript" src="{% static 'events/ResponsiveImageGallery/js/jquery.elastislide.js' %}"></script>
+		<script type="text/javascript" src="{% static 'events/ResponsiveImageGallery/js/gallery.js' %}"></script>
+		{% endblock %}

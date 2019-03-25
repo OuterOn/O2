@@ -1,0 +1,233 @@
+{% extends 'events/base.html' %}
+{% load staticfiles %}
+{% load app_filters %}
+
+		{% block content%}
+		<!-- start banner Area -->
+		<section class="banner-area">		
+			<div class="container">
+				<div class="row fullscreen align-items-center justify-content-between">
+					<div class="col-lg-12 banner-content">
+						<h1 class="text-white">OuterOn</h1>
+						<h4 class="text-white ">We curate <i><strong>aspirational</strong></i> events for self-exploration.</h4>
+						<!-- <h4 class="text-white">If <i><strong>music</strong></i> drives you... Let no reasons hold you back...</h4> -->
+						</br></br>
+						<!-- <div class="icon">
+							<h3 class="text-white"><span class="lnr lnr-calendar-full"></span> 05th 2018</h3>
+							<h3 class="text-white"><span class="lnr lnr-location"></span>  56/8, Dhanmondi, Dhaka - 1205</h3>
+						</div> -->
+						</br>
+						<a href="#upcoming" class="primary-btn text-uppercase"> See Latest Events </a>
+					</div>
+				</div>
+			</div>					
+		</section>
+		<!-- End banner Area -->
+
+		<!-- Start home-about Area -->
+		<section class="home-about-area section-gap">
+			<div class="container">
+				<h1 class="text-center">SETTING UP A STAGE FOR THE ARTIST INSIDE YOU</h1>
+				</br></br>
+				<div class="row align-items-center">
+					<div class="col-lg-4 home-about-left">
+						<div class="">
+							<img class="img-fluid" src="{% static 'events/img/about-img.jpg' %}" alt="">
+						</div>
+						</br>
+						<h4>About Our Story</h4>
+						<p>
+							Who are in extremely love with eco friendly system. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+						<!-- <a href="#" class="primary-btn">view full menu</a> -->
+					</div>
+					<div class="col-lg-4 home-about-left">
+						<div class="">
+							<img class="img-fluid" src="{% static 'events/img/about-img.jpg' %}" alt="">
+						</div>
+						</br>
+						<h4>About Our Story</h4>
+						<p>
+							Who are in extremely love with eco friendly system. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+						<!-- <a href="#" class="primary-btn">view full menu</a> -->
+					</div>
+					<div class="col-lg-4 home-about-left">
+						<div class="">
+							<img class="img-fluid" src="{% static 'events/img/about-img.jpg' %}" alt="">
+						</div>
+						</br>
+						<h4>About Our Story</h4>
+						<p>
+							Who are in extremely love with eco friendly system. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+						<!-- <a href="#" class="primary-btn">view full menu</a> -->
+					</div>
+
+					<!-- <div class="col-lg-6 home-about-right">
+						<img class="img-fluid" src="img/about-img.jpg" alt="">
+					</div> -->
+				</div>
+			</div>	
+		</section>
+		<!-- End home-about Area -->
+
+
+		<!-- Start upcoming Area -->
+		{% if upcoming %}
+			<section class="blog-area" id="upcoming">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-70 col-lg-8">
+							<div class="title text-center">
+								<h1 class="mb-10">Upcoming Events</h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.</p>
+							</div>
+						</div>
+					</div>					
+					<div class="row">
+						{% for e in upcoming %}
+							<div class="col-lg-3 col-md-6 col-sm-6 single-blog">
+								<div class="thumb">
+									<img class="img-fluid" src="media/{{ e.icon }}" alt="">								
+								</div>
+								<p class="date">{{ e.datetime | date:"d M Y"}}</p>
+								<div style="line-height: 5px;">
+									<a href="/event/{{ e.id }}"><h4>{{ e.title }}</h4></a>
+									<p>{{e.venue_name|title}}, {{ e.city|title }}</p>
+								</div>			
+							</div>
+						{% endfor %}
+						<!-- <div class="col-lg-3 col-md-6 col-sm-6 single-blog">
+							<div class="thumb">
+								<img class="img-fluid" src="{% static 'events/img/b2.jpg' %}" alt="">								
+							</div>
+							<p class="date">10 Jan 2018</p>
+							<a href="blog-single.html"><h4>Secret of making Heart 
+							Shaped eggs</h4></a>
+							<p>
+								inappropriate behavior ipsum dolor sit amet, consectetur.
+							</p>
+							<div class="meta-bottom d-flex justify-content-between">
+								<p><span class="lnr lnr-heart"></span> 15 Likes</p>
+								<p><span class="lnr lnr-bubble"></span> 02 Comments</p>
+							</div>									
+						</div> -->							
+					</div>
+				</div>	
+			</section>
+		{% endif %}
+		<!-- End upcoming Area -->
+
+		<!-- Start Past Area -->
+		{% if past %}
+			<section class="blog-area section-gap" id="past">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-70 col-lg-8">
+							<div class="title text-center">
+								<h1 class="mb-10">Past Events</h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.</p>
+							</div>
+						</div>
+					</div>					
+					<div class="row">
+						{% for e, perfs in past %}
+							<div class="col-lg-3 col-md-6 col-sm-6 single-blog">
+								<div class="thumb">
+									<img class="img-fluid" src="media/{{ e.icon }}" alt="">								
+								</div>
+								<div class="meta-bottom d-flex justify-content-between">
+									<p class="date">{{ e.datetime | date:"d b Y" | title }}</p>
+									<p style="margin-top: 25px;"><span class="lnr lnr-mic"></span> {{ perfs }} Performances</p>
+								</div>
+								<div style="line-height: 5px;">
+									<a href="/event/{{ e.id }}"><h4>{{ e.title }}</h4></a>
+									<p>{{e.venue_name|title}}, {{ e.city|title }}</p>
+									<!-- <p><span class="lnr lnr-mic"></span> {{ perfs }} Performances</p> -->
+									<!-- <div class="meta-bottom d-flex justify-content-between">
+										<p><span class="lnr lnr-mic"></span> {{ perfs }} Performances</p>
+										<p><span class="lnr lnr-heart"></span> 2 Likes</p>
+									</div> -->
+								</div>									
+							</div>
+						{% endfor %}							
+					</div>
+				</div>	
+			</section>
+		{% endif %}
+		<!-- End Past Area -->
+
+		<!-- Start Review Area -->
+		{% if feedbacks %}
+			<section class="review-area section-gap">
+				<div class="container">
+					<h1 class="text-center">People's Words</h1>
+					</br></br>
+					<div class="row">
+						<div class="active-review-carusel">
+							{% for feedback in feedbacks %}
+								<div class="single-review">
+									<!-- <img src="{% static 'events/img/user.png' %}" alt=""> -->
+									<h4>{{feedback.event_person_map.person_id.first_name}} {{feedback.event_person_map.person_id.last_name}}</h4>
+									<p>{{feedback.event_person_map.person_id.one_liner}}</p>
+									
+									<div class="star">
+										{% for i in feedback.rating|getrange %}
+											<span class="fa fa-star checked"></span>
+										{% endfor %}
+										
+										{% for i in feedback.rating|minus|getrange %}
+											<span class="fa fa-star"></span>
+										{% endfor %}					
+									</div>	
+									<p>
+										{{feedback.comment}}
+									</p>
+								</div>
+							{% endfor %}
+							<div class="single-review">
+								<img src="{% static 'events/img/user.png' %}" alt="">
+								<h4>Hulda Sutton</h4>
+								<div class="star">
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star"></span>								
+								</div>	
+								<p>
+									“Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker. Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.”
+								</p>
+							</div>												
+						</div>
+					</div>
+				</div>	
+			</section>
+		{% endif %}
+		<!-- End review Area -->
+
+		<!-- Start brand area -->
+		{% if sponsors %}
+			<section class="brand-area section-gap">
+				<div class="container">
+					<h1 class="text-center">Partners</h1>
+					</br></br></br>
+					<div class="row logo-wrap">
+						{% for sponsor in sponsors %}
+							<a class="col single-img" href="{{ sponsor.website }}">
+								<img style="width: 159px; height: 110px;" class="d-block mx-auto" src="/media/{{ sponsor.logo }}" alt="">
+							</a>
+						{% endfor %}
+						<!-- <a class="col single-img" href="#">
+							<img class="d-block mx-auto" src="{% static 'events/img/l2.png' %}" alt="">
+						</a>
+						<a class="col single-img" href="#">
+							<img class="d-block mx-auto" src="{% static 'events/img/l2.png' %}" alt="">
+						</a> -->
+					</div>	
+				</div>	
+			</section>
+		{% endif %}
+		<!-- end brand area -->
+		{% endblock %}

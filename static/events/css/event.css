@@ -1,0 +1,72 @@
+
+.event_timer_container
+{
+
+}
+.event_timer li
+{
+	display: inline-block;
+	height: 80px;
+	width: 100px;
+	text-align: center;
+}
+.event_timer li:not(:last-child)
+{
+	border-right: solid 1px #e0e0e0;
+}
+.event_num
+{
+	font-size: 40px;
+	font-weight: 600;
+	line-height: 0.75;
+	color: #181818;
+	margin-top: 8px;
+}
+.event_ss
+{
+	font-size: 16px;
+	line-height: 0.75;
+	color: #7c7c7c;
+	text-transform: uppercase;
+	margin-top: 19px;
+}
+
+#numbers {
+  margin-top: 60px;
+}
+
+.number {
+  margin-bottom: 30px;
+}
+
+.number h3 {
+  font-size: 42px;
+  margin-bottom: 0px;
+  color: #dd0a37;
+}
+
+.number p {
+  text-transform: uppercase;
+  color: #0b0f28;
+}
+
+.counter_box {
+  text-align: left;
+  margin: 25px 0;
+  padding: 15px 5px;
+}
+.counter_box span, .counter_box .counter {
+  font-size: 48px;
+  display: inline-block;
+  margin: 0;
+  color: #f50136;
+  font-weight: 600;
+}
+.counter_box h5 {
+  font-weight: 500;
+  text-transform: capitalize;
+  margin: 0;
+  font-size: 14px;
+  color: #18181c;
+  margin-top: 15px;
+}

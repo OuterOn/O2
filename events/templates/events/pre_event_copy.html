@@ -1,0 +1,419 @@
+{% load staticfiles %}
+{% load app_filters %}
+
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+<head>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="img/fav.png">
+	<meta name="author" content="colorlib">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta charset="UTF-8">
+
+	<title>OuterOn</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+	<link rel="stylesheet" href="{% static 'events/css/linearicons.css' %}">
+	<link rel="stylesheet" href="{% static 'events/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'events/css/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'events/css/magnific-popup.css' %}">
+	<link rel="stylesheet" href="{% static 'events/css/jquery-ui.css' %}">				
+	<link rel="stylesheet" href="{% static 'events/css/nice-select.css' %}">							
+	<link rel="stylesheet" href="{% static 'events/css/animate.min.css' %}">
+	<link rel="stylesheet" href="{% static 'events/css/owl.carousel.css' %}">				
+	<link rel="stylesheet" href="{% static 'events/css/main.css' %}">
+	<link rel="stylesheet" href="{% static 'events/css/event.css' %}">
+	<link rel="shortcut icon" href="{% static 'events/img/O2_logo.png' %}"> 
+	<link rel="stylesheet" type="text/css" href="{% static 'events/ResponsiveImageGallery/css/elastislide.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'events/ResponsiveImageGallery/css/style_photo_carousal.css' %}" />
+	<script>
+		// Set the date we're counting down to
+		var countDownDate = new Date("{{ event_obj.datetime | date:'M d, Y h:i:s'}}").getTime();
+
+		// Update the count down every 1 second
+		var x = setInterval(function() {
+
+			// Get todays date and time
+			var now = new Date().getTime();
+			// Find the distance between now and the count down date
+			var distance = countDownDate - now;
+			// Time calculations for days, hours, minutes and seconds
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+			document.getElementById("day").innerHTML = days;
+			document.getElementById("hour").innerHTML = hours;
+			document.getElementById("minute").innerHTML = minutes;
+			document.getElementById("second").innerHTML = seconds;
+
+		}, 1000);
+	</script>
+	</head>
+	<body>
+		<header id="header">
+			<div class="header-top">
+				<div class="container">
+			  		<div class="row justify-content-center">
+					      <div id="logo">
+					        <a href="index.html"><img src="img/O2_logo.png" alt="" title="" /></a>
+					      </div>
+			  		</div>			  					
+				</div>
+			</div>
+			<div class="container main-menu">
+				<div class="row align-items-center justify-content-center d-flex">			
+			      <nav id="nav-menu-container">
+			        <ul class="nav-menu">
+			          <li><a href="index.html">Home</a></li>
+			          <li><a href="about.html">About</a></li>
+			          <li><a href="menu.html">Events</a></li>
+			          <li><a href="gallery.html">Gallery</a></li>
+			          <!-- <li class="menu-has-children"><a href="">Blog</a>
+			            <ul>
+			              <li><a href="blog-home.html">Blog Home</a></li>
+			              <li><a href="blog-single.html">Blog Single</a></li>
+			            </ul>
+			          </li>	
+			          <li class="menu-has-children"><a href="">Pages</a>
+			            <ul>
+			            	  <li><a href="elements.html">Elements</a></li>
+					          <li class="menu-has-children"><a href="">Level 2 </a>
+					            <ul>
+					              <li><a href="#">Item One</a></li>
+					              <li><a href="#">Item Two</a></li>
+					            </ul>
+					          </li>					                		
+			            </ul>
+			          </li>	 -->				          					          		          
+			          <li><a href="contact.html">Contact</a></li>
+			          <!-- <li><a href="#" class="text-uppercase" style="background: red;"> Get Tickets </a></li> -->
+			        </ul>
+			      </nav><!-- #nav-menu-container -->					      		  
+				</div>
+			</div>
+		</header>
+		<!-- #header -->
+		
+		<!-- start banner Area -->
+		<section class="banner-area">		
+			<div class="container">
+				<div class="row fullscreen align-items-center justify-content-between">
+					<div class="col-lg-12 banner-content">
+						</br></br>	
+						<h1 class="text-white">{{ event_obj.title }}</h1>
+						<h4 class="text-white ">{{ event_obj.one_liner|safe|escape }}</h4>
+						</br>
+						<div class="icon">
+							<div class="event_timer_container ml-lg-auto">
+								<ul class="event_timer">
+									<li><div id="day" class="event_num text-white">00</div><div class="event_ss text-white">day</div></li>
+									<li><div id="hour" class="event_num text-white">00</div><div class="event_ss text-white">hrs</div></li>
+									<li><div id="minute" class="event_num text-white">00</div><div class="event_ss text-white">min</div></li>
+									<li><div id="second" class="event_num text-white">00</div><div class="event_ss text-white">sec</div></li>
+								</ul>
+							</div>
+							</br>
+							<h3 class="text-white"><span class="lnr lnr-calendar-full"></span> {{ event_obj.datetime | date:"j F, Y | g A"}}</h3>
+							<h3 class="text-white"><span class="lnr lnr-location"></span> {{ event_obj.venue_name }}</h3>
+						</div>
+						</br></br>
+						<a href="#ticket" class="primary-btn text-uppercase"> Get Tickets </a>
+					</div>
+				</div>
+			</div>					
+		</section>
+		<!-- End banner Area -->
+
+		<!-- <section>
+			<div class="container">
+				<div class="col-md-8 col-md-offset-2 text-center" style="margin-left: 16.66666667%;">
+					<div id="numbers">
+						<div class="row">
+							<div class="col-md-3 col-sm-3 col-xs-6">
+								<div class="number">
+									<h3><span class="counter" data-from="0" data-to="900" data-speed="1500">0</span>+</h3>
+									<p>Hours</p>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-6">
+								<div class="number">
+									<h3><span class="counter" data-from="0" data-to="750" data-speed="1500">0</span>+</h3>
+									<p>Venues</p>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-6">
+								<div class="number">
+									<h3><span class="counter" data-from="0" data-to="50" data-speed="1500">0</span>+</h3>
+									<p>Country</p>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-6">
+								<div class="number">
+									<h3><span class="counter" data-from="0" data-to="20" data-speed="1500">0</span>+</h3>
+									<p>Speakers</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section> -->
+
+		<!-- Start home-about Area -->
+		<section class="home-about-area section-gap">
+			<div class="container">
+				<h1 class="text-center">About</h1>
+				</br></br>
+				<div class="row align-items-center">
+					<div class="col-lg-4 home-about-left">
+						<div class="">
+							<img class="img-fluid" src="{% static 'events/img/about-img.jpg' %}" alt="">
+						</div>
+						</br>
+						<h4>About Our Story</h4>
+						<p>
+							Who are in extremely love with eco friendly system. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+						<!-- <a href="#" class="primary-btn">view full menu</a> -->
+					</div>
+					<div class="col-lg-4 home-about-left">
+						<div class="">
+							<img class="img-fluid" src="{% static 'events/img/about-img.jpg' %}" alt="">
+						</div>
+						</br>
+						<h4>About Our Story</h4>
+						<p>
+							Who are in extremely love with eco friendly system. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+						<!-- <a href="#" class="primary-btn">view full menu</a> -->
+					</div>
+					<div class="col-lg-4 home-about-left">
+						<div class="">
+							<img class="img-fluid" src="{% static 'events/img/about-img.jpg' %}" alt="">
+						</div>
+						</br>
+						<h4>About Our Story</h4>
+						<p>
+							Who are in extremely love with eco friendly system. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+						<!-- <a href="#" class="primary-btn">view full menu</a> -->
+					</div>
+				</div>
+			</div>	
+		</section>
+		<!-- End home-about Area -->
+
+		<!-- Start guests Area -->
+		<section class="home-about-area">
+			<div class="container">
+				<h1 class="text-center">Guest Performances</h1>
+				</br></br>
+				<div class="row align-items-center">
+					{% for person, detail in guests %}
+						<div class="col-lg-4 home-about-center">
+							<div class="">
+								<img class="img-fluid" src="/media/{{ detail.photograph }}" alt="" style=" border-radius: 50%;  display: block; margin-left: auto; margin-right: auto; width: 50%;">
+							</div>
+							</br>
+							<h4 class="text-center">{{ person.first_name}} {{ person.last_name }}</h4>
+							</br>
+							<p class="text-center">{{ person.one_liner|linebreaksbr }}</p>
+							<!-- <a href="#" class="primary-btn">view full menu</a> -->
+						</div>
+					{% endfor %}
+					<!-- <div class="col-lg-4 home-about-center">
+						<div class="">
+							<img class="img-fluid" src="{% static 'events/img/guest_image.jpg' %}" alt="" style=" border-radius: 50%;  display: block; margin-left: auto; margin-right: auto; width: 50%;">
+						</div>
+						</br>
+						<h4 class="text-center">About Our Story</h4>
+						<p class="text-center">
+							Who are in extremely love with eco friendly system. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+					</div> -->
+				</div>
+			</div>	
+		</section>
+		<!-- End guests Area -->
+
+
+		<!-- Start brand area -->
+		<section class="brand-area section-gap">
+			<div class="container">
+				<h1 class="text-center">Partners</h1>
+				</br></br></br>
+				<div class="row logo-wrap">
+					{% for sponsor in sponsors %}
+						<a class="col single-img" href="{{ sponsor.website }}">
+							<img style="width: 159px; height: 110px;" class="d-block mx-auto" src="/media/{{ sponsor.logo }}" alt="">
+						</a>
+					{% endfor %}
+					<a class="col single-img" href="#">
+						<img class="d-block mx-auto" src="{% static 'events/img/l2.png' %}" alt="">
+					</a>
+					<a class="col single-img" href="#">
+						<img class="d-block mx-auto" src="{% static 'events/img/l2.png' %}" alt="">
+					</a>
+				</div>	
+			</div>	
+		</section>
+		<!-- end brand area -->
+
+		<!-- Start Ticket section -->
+		<section class="menu-area section-gap" id="ticket">
+			<div class="container">
+				<h1 class="text-center">Grab your Tickets</h1>
+				<br>
+				<div class="row">
+					<div class="col-md-6">
+						<div>
+							<div class="single-menu">
+								<div class="title-wrap d-flex justify-content-between">
+									<h4>Perfomer Ticket</h4>
+									<h4 class="price">₹{{ prices.performer_fee }}</h4>
+								</div>			
+								<p>
+									Usage of the Internet is becoming more common due to rapid advance. Usage of the Internet is becoming more common due to rapid advance.
+								</p>									
+							</div>
+						</div>
+						<div>
+							<div class="single-menu">
+								<div class="title-wrap d-flex justify-content-between">
+									<h4>Audience Ticket</h4>
+									<h4 class="price">₹{{ prices.audience_fee }}</h4>
+								</div>                           			
+								<p>
+									Usage of the Internet is becoming more common due to rapid advance. Usage of the Internet is becoming more common due to rapid advance.
+								</p>									
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="single-menu">
+							<h4 class="text-center">To Pay, Scan QR Code in Paytm App</h4>
+							<div class="title-wrap d-flex justify-content-between">
+                    			<div class="single-gallery">
+                    				<img class="img-fluid" style="width:200px; height: 200px; "src="{% static 'events/img/paytm_logo.jpg' %}" alt="">
+                    			</div>
+								<div class="single-gallery">
+                    				<img class="img-fluid" style="width:200px; height: 200px; "src="{% static 'events/img/paytm_barcode.png' %}" alt="">
+                    			</div>
+							</div>
+							<!-- <div class="single-gallery">
+                    			<img class="img-fluid" style="width:200px; height: 200px; "src="img/paytm_barcode.png" alt="">
+                    		</div>  -->                          			
+							<h5 class="text-center">
+								Or, send it directly to <strong>7042360720</strong>
+							</h5>									
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Ticket Section -->				
+
+		<!-- start footer Area -->		
+		<footer class="footer-area">
+			<div class="footer-widget-wrap">
+				<div class="container">
+					<div class="row ">
+						<div class="col-lg-4  col-md-6 col-sm-6">
+							<div class="single-footer-widget">
+								</br></br>
+								<h4>For any information or query,</br> drop an email to us.</h4>
+								<!-- <ul class="hr-list">
+									<li class="d-flex justify-content-between">
+										<span>Monday - Friday</span> <span>08.00 am - 10.00 pm</span>
+									</li>
+									<li class="d-flex justify-content-between">
+										<span>Saturday</span> <span>08.00 am - 10.00 pm</span>
+									</li>
+									<li class="d-flex justify-content-between">
+										<span>Sunday</span> <span>08.00 am - 10.00 pm</span>
+									</li>																				
+								</ul> -->
+								<a href="#" class="primary-btn text-uppercase" style="background-color: #000;">Write an Email </a>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="single-footer-widget">
+								</br></br>
+								<h4>OR, Contact Us</h4>
+								<!-- <p>
+									56/8, los angeles, rochy beach, Santa monica, United states of america - 1205
+								</p> -->
+								<p class="number">
+									+91-8918580148 <br>
+									+91-7042360720
+								</p>
+							</div>
+						</div>						
+						<div class="col-lg-4 col-md-6 col-sm-6">
+							<div class="single-footer-widget">
+								</br></br>
+								<h4>Subscribe</h4>
+								<p>You can trust us. we only send event updates, not a single spam.</p>
+								<div class="d-flex flex-row" id="mc_embed_signup">
+									<form class="navbar-form" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get">
+									    <div class="input-group add-on align-items-center d-flex">
+									      	<input class="form-control" name="EMAIL" placeholder="Your Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email address'" required="" type="email">
+											<div style="position: absolute; left: -5000px;">
+												<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+											</div>
+									      <div class="input-group-btn">
+									        <button class="genric-btn"><span class="lnr lnr-arrow-right"></span></button>
+									      </div>
+									    </div>
+									    <div class="info mt-20"></div>
+									</form>
+								</div>
+							</div>
+						</div>						
+					</div>					
+				</div>					
+			</div>
+			<div class="footer-bottom-wrap">
+				<div class="container">
+					<div class="row footer-bottom d-flex justify-content-between align-items-center">
+						<p class="col-lg-8 col-mdcol-sm-6 -6 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> OuterOn - All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+						<ul class="col-lg-4 col-mdcol-sm-6 -6 social-icons text-right">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>           
+                        </ul>
+					</div>						
+				</div>
+			</div>
+		</footer>
+		<!-- End footer Area -->	
+		
+		<script src="{% static 'events/js/vendor/jquery-2.2.4.min.js' %}"></script>
+		<script src="{% static 'events/js/popper.min.js' %}"></script>
+		<script src="{% static 'events/js/vendor/bootstrap.min.js' %}"></script>			
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>		
+		<script src="{% static 'events/js/jquery-ui.js' %}"></script>					
+		<script src="{% static 'events/js/easing.min.js' %}"></script>			
+		<script src="{% static 'events/js/hoverIntent.js' %}"></script>
+		<script src="{% static 'events/js/superfish.min.js' %}"></script>	
+		<script src="{% static 'events/js/jquery.ajaxchimp.min.js' %}"></script>
+		<script src="{% static 'events/js/jquery.magnific-popup.min.js' %}"></script>						
+		<script src="{% static 'events/js/jquery.nice-select.min.js' %}"></script>					
+		<script src="{% static 'events/js/owl.carousel.min.js' %}"></script>			
+        <script src="{% static 'events/js/isotope.pkgd.min.js' %}"></script>								
+		<script src="{% static 'events/js/mail-script.js' %}"></script>	
+		<script src="{% static 'events/js/main.js' %}"></script>	
+		<script src="https://apis.google.com/js/platform.js"></script>
+		<script type="text/javascript" src="{% static 'events/ResponsiveImageGallery/js/jquery.tmpl.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'events/ResponsiveImageGallery/js/jquery.easing.1.3.js' %}"></script>
+		<script type="text/javascript" src="{% static 'events/ResponsiveImageGallery/js/jquery.elastislide.js' %}"></script>
+		<script type="text/javascript" src="{% static 'events/ResponsiveImageGallery/js/gallery.js' %}"></script>
+	</body>
+</html>

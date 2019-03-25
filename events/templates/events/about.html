@@ -1,0 +1,77 @@
+{% extends 'events/base.html' %}
+{% load staticfiles %}
+{% load app_filters %}	
+		
+		{% block content%}
+		<!-- Start Banner Area -->
+		<section class="about-banner relative">
+			<div class="overlay overlay-bg"></div>
+			<div class="container">				
+				<div class="row d-flex align-items-center justify-content-center">
+					<div class="about-content col-lg-12">
+						<h1 class="text-white">
+							About Us			
+						</h1>	
+						<p class="text-white link-nav"><a href="/">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="/about"> About Us</a></p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End banner Area -->	
+
+		<!-- Start home-about Area -->
+		<section class="home-about-area section-gap">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6 home-about-left">
+						<h1>About Our Story</h1>
+						<p>
+							Who are in extremely love with eco friendly system. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+						<a href="#" class="primary-btn">view full menu</a>
+					</div>
+					<div class="col-lg-6 home-about-right">
+						<img class="img-fluid" src="{% static 'events/img/about-img.jpg' %}" alt="">
+					</div>
+				</div>
+			</div>	
+		</section>
+		<!-- End home-about Area -->	
+
+		<!-- Start curator Area -->
+		<section class="home-about-area section-gap">
+			<div class="container">
+				<h1 class="text-center">Curated By</h1>
+				</br></br>
+				<div class="row justify-content-center">
+					<div class="col-lg-6 home-about-left">
+						<img class="img-fluid" src="{% static 'events/img/sana.jpeg' %}" alt=""  style="border-radius: 50%;  display: block; margin-left: auto; margin-right: auto; width: 200px;">
+						</br>
+						<h4 class="text-center">Sana Farheen</h4>
+						<div class="footer-bottom d-flex justify-content-center">
+							<ul class="social-icons">
+	                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+	                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+	                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+	                            <li><a href="#"><i class="fa fa-behance"></i></a></li>           
+	                        </ul>
+						</div>
+					</div>
+					<div class="col-lg-6 home-about-left">
+						<img class="img-fluid" src="{% static 'events/img/raghav.jpg' %}" alt=""  style="border-radius: 50%;  display: block; margin-left: auto; margin-right: auto;  width: 200px;">
+						</br>
+						<h4 class="text-center">Raghav Maheshwari</h4>
+						<div class="footer-bottom d-flex justify-content-center">
+							<ul class="social-icons">
+	                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+	                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+	                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+	                            <li><a href="#"><i class="fa fa-behance"></i></a></li>           
+	                        </ul>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</section>
+		<!-- End curator Area -->
+		{% endblock %}

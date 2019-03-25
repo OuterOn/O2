@@ -1,0 +1,215 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="shortcut icon" href="img/fav.png">
+		<meta name="author" content="colorlib">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta charset="UTF-8">
+		
+		<title>OuterOn</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+		<link rel="stylesheet" href="{% static 'events/css/linearicons.css' %}">
+		<link rel="stylesheet" href="{% static 'events/css/font-awesome.min.css' %}">
+		<link rel="stylesheet" href="{% static 'events/css/bootstrap.css' %}">
+		<link rel="stylesheet" href="{% static 'events/css/magnific-popup.css' %}">
+		<link rel="stylesheet" href="{% static 'events/css/jquery-ui.css' %}">				
+		<link rel="stylesheet" href="{% static 'events/css/nice-select.css' %}">							
+		<link rel="stylesheet" href="{% static 'events/css/animate.min.css' %}">
+		<link rel="stylesheet" href="{% static 'events/css/owl.carousel.css' %}">				
+		<link rel="stylesheet" href="{% static 'events/css/main.css' %}">
+		<link rel="stylesheet" href="{% static 'events/css/event.css' %}">
+		<link rel="shortcut icon" href="{% static 'events/img/O2_logo.png' %}"> 
+		<link rel="stylesheet" type="text/css" href="{% static 'events/ResponsiveImageGallery/css/elastislide.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'events/ResponsiveImageGallery/css/style_photo_carousal.css' %}" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		{% block script %}
+		{% endblock %}
+	</head>
+	</head>
+	<body>	
+		<header id="header">
+			<div class="header-top">
+				<div class="container">
+			  		<div class="row justify-content-center">
+					      <div id="logo">
+					        <a href="/"><img src="{% static 'events/img/O2_logo.png' %}" alt="" title="" /></a>
+					      </div>
+			  		</div>			  					
+				</div>
+			</div>
+			<div class="container main-menu">
+				<div class="row align-items-center justify-content-center d-flex">			
+			      <nav id="nav-menu-container">
+			        <ul class="nav-menu">
+			          <li><a href="/">Home</a></li>
+			          <li><a href="/about">About</a></li>
+			          <li><a href="/#upcoming">Events</a></li>
+			          <li><a href="/gallery">Gallery</a></li>
+			          <!-- <li class="menu-has-children"><a href="">Blog</a>
+			            <ul>
+			              <li><a href="blog-home.html">Blog Home</a></li>
+			              <li><a href="blog-single.html">Blog Single</a></li>
+			            </ul>
+			          </li>	
+			          <li class="menu-has-children"><a href="">Pages</a>
+			            <ul>
+			            	  <li><a href="elements.html">Elements</a></li>
+					          <li class="menu-has-children"><a href="">Level 2 </a>
+					            <ul>
+					              <li><a href="#">Item One</a></li>
+					              <li><a href="#">Item Two</a></li>
+					            </ul>
+					          </li>					                		
+			            </ul>
+			          </li>	 -->				          					          		          
+			          <li><a href="contact">Contact</a></li>
+			        </ul>
+			      </nav><!-- #nav-menu-container -->					      		  
+				</div>
+			</div>
+		</header><!-- #header -->
+		
+		{% block content %}
+		{% endblock %}
+
+		<!-- start footer Area -->		
+		<footer class="footer-area">
+			<div class="footer-widget-wrap">
+				<div class="container">
+					<div class="row ">
+						<div class="col-lg-4  col-md-6 col-sm-6">
+							<div class="single-footer-widget">
+								</br></br>
+								<h4>For any suggestion, information or query, drop an email to us.</h4>
+								<a href="/contact" class="primary-btn text-uppercase" style="background-color: #000;">Write an Email </a>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="single-footer-widget">
+								</br></br>
+								<h4>OR, Contact Us</h4>
+								<!-- <p>
+									56/8, los angeles, rochy beach, Santa monica, United states of america - 1205
+								</p> -->
+								<p class="number">
+									+91-8918580148 <br>
+									+91-7042360720
+								</p>
+							</div>
+						</div>						
+						<div class="col-lg-4 col-md-6 col-sm-6">
+							<div class="single-footer-widget">
+								</br></br>
+								<h4>Subscribe</h4>
+								<p>You can trust us. we only send event updates, not a single spam.</p>
+								<div class="d-flex flex-row">
+									<form class="navbar-form" action="/subscribe" method="post">
+										{% csrf_token %}
+									    <div class="input-group add-on align-items-center d-flex">
+									      	<input class="form-control" name="EMAIL" id="inputEmail" placeholder="Your Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email address'" required="" type="email">
+											<!-- <div style="position: absolute; left: -5000px;">
+												<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+											</div> -->
+									    	<div class="input-group-btn">
+									        	<button class="genric-btn" id="subscribe"><span class="lnr lnr-arrow-right"></span></button>
+									    	</div>
+									    </div>
+									    <div class="info mt-20">
+									    	<p id="subscribe_text"></p>
+									    </div>
+									</form>
+								</div>
+							</div>
+						</div>						
+					</div>					
+				</div>					
+			</div>
+			<div class="footer-bottom-wrap">
+				<div class="container">
+					<div class="row footer-bottom d-flex justify-content-between align-items-center">
+						<p class="col-lg-8 col-mdcol-sm-6 -6 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> OuterOn - All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+						<ul class="col-lg-4 col-mdcol-sm-6 -6 social-icons text-right">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>           
+                        </ul>
+					</div>						
+				</div>
+			</div>
+		</footer>
+		<!-- End footer Area -->	
+
+		<script src="{% static 'events/js/vendor/jquery-2.2.4.min.js' %}"></script>
+		<script src="{% static 'events/js/popper.min.js' %}"></script>
+		<script src="{% static 'events/js/vendor/bootstrap.min.js' %}"></script>
+		<script src="{% static 'events/js/jquery-ui.js' %}"></script>					
+		<script src="{% static 'events/js/easing.min.js' %}"></script>			
+		<script src="{% static 'events/js/hoverIntent.js' %}"></script>
+		<script src="{% static 'events/js/superfish.min.js' %}"></script>	
+		<script src="{% static 'events/js/jquery.ajaxchimp.min.js' %}"></script>
+		<script src="{% static 'events/js/jquery.magnific-popup.min.js' %}"></script>						
+		<script src="{% static 'events/js/jquery.nice-select.min.js' %}"></script>					
+		<script src="{% static 'events/js/owl.carousel.min.js' %}"></script>			
+        <script src="{% static 'events/js/isotope.pkgd.min.js' %}"></script>								
+		<script src="{% static 'events/js/mail-script.js' %}"></script>	
+		<script src="{% static 'events/js/main.js' %}"></script>
+		<script src="https://apis.google.com/js/platform.js"></script>
+		{% block galleryscripts %}
+		{% endblock %}
+		<script type="text/javascript">
+			function getCookie(name) {
+				var cookieValue = null;
+	            if (document.cookie && document.cookie != '') {
+	            	var cookies = document.cookie.split(';');
+	            	for (var i = 0; i < cookies.length; i++) {
+	          			var cookie = jQuery.trim(cookies[i]);
+	            		// Does this cookie string begin with the name we want?
+		        		if (cookie.substring(0, name.length + 1) == (name + '=')) {
+		          			cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+		          			break;
+	            		}
+	          		}
+      			}
+ 				return cookieValue;
+ 			}
+
+ 			$("#subscribe").click(function(e) {
+				$("#subscribe_text").text("Submitting...");
+				e.preventDefault();
+				
+				var csrftoken = getCookie('csrftoken');
+				var email = $('#inputEmail').val();
+
+				$.ajax({
+					url : '/subscribe',
+					type : "POST", // http method
+					data : { 
+						csrfmiddlewaretoken : csrftoken,
+						email : email
+					}, 
+					dataType: 'json',
+					success : function(data) {
+						$("#subscribe_text").text(data['message']);
+						setTimeout(function() { $("#subscribe_text").hide(); }, 3000);
+					},
+					error : function(xhr,errmsg,err) {
+						$("#subscribe_text").text("Some issue occured while subcribing. Please try again later.");
+					}
+				});
+			});
+		</script>
+		{% block contact-script %}
+		{% endblock %}
+
+		{% block countTo %}
+		{% endblock %}	
+	</body>
+</html>
